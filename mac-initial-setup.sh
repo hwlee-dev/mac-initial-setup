@@ -92,3 +92,6 @@ brew bundle
 
 # nvm 설치
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# node 최신 버전 설치
+nvm install node
