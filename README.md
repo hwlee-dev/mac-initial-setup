@@ -10,3 +10,4 @@
 - Brewfile 생성
 - Brewfile 설치
 - nvm 설치
+- node 최신 버전 설치
