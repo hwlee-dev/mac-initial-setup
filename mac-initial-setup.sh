@@ -58,26 +58,30 @@ brew "git"
 brew "mas"
 brew "yarn"
 
-# Youtube 다운로더 - 개인 사용
+# 개인 사용
 # brew "ffmpeg"
 # brew "yt-dlp"
+# cask "discord"
+# cask "telegram"
 
 # 도구
+cask "aldente"
 cask "alfred"
+cask "bartender"
 cask "karabiner-elements"
 cask "macupdater"
 cask "rectangle"
 cask "soundsource"
 
-# 일반 프로그램
+# 일반
 cask "adobe-acrobat-reader"
 cask "google-chrome"
 cask "iina"
 cask "notion"
 cask "slack"
-cask "telegram"
 
 # 개발
+cask "iterm2"
 cask "jetbrains-toolbox"
 
 # mas
