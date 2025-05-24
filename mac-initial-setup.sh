@@ -52,18 +52,34 @@ if [ ! -f "$Brewfile_path" ]; then
     touch "$Brewfile_path"
 fi
 
+# --personal 플래그 체크
+personal=0
+for arg in "$@"; do
+    if [ "$arg" == "--personal" ]; then
+        personal=1
+        break
+    fi
+done
+
+# Brewfile 내용 작성
 cat <<EOL > "$Brewfile_path"
 # Mac App Store command-line interface
 brew "git"
 brew "mas"
 brew "yarn"
+EOL
 
 # 개인 사용
-# brew "ffmpeg"
-# brew "yt-dlp"
-# cask "discord"
-# cask "telegram"
+if [ "$personal" -eq 1 ]; then
+    cat <<EOL >> "$Brewfile_path"
+brew "ffmpeg"
+brew "yt-dlp"
+cask "discord"
+cask "telegram"
+EOL
+fi
 
+cat <<EOL >> "$Brewfile_path"
 # 도구
 cask "aldente"
 cask "alfred"
@@ -81,6 +97,7 @@ cask "notion"
 cask "slack"
 
 # 개발
+cask "figma"
 cask "iterm2"
 cask "jetbrains-toolbox"
 
