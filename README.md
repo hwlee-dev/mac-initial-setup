@@ -11,3 +11,11 @@
 - Brewfile 설치
 - nvm 설치
 - node 최신 버전 설치
+
+```
+# 개인용
+./mac-initial-setup --personal
+
+# 업무용
+./mac-initial-setup
+```
