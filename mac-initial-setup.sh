@@ -91,6 +91,7 @@ cask "slack"
 cask "figma"
 cask "iterm2"
 cask "jetbrains-toolbox"
+cask "visual-studio-code"
 
 # mas
 mas "카카오톡", id: 869223134
