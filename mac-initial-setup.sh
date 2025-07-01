@@ -41,8 +41,12 @@ source ~/.zshrc
 ######################################################################
 Brewfile_path=~/Brewfile
 
+# Brewfile이 존재하지 않으면 파일 생성
 if [ ! -f "$Brewfile_path" ]; then
     touch "$Brewfile_path"
+    echo "Created Brewfile at $Brewfile_path"
+else
+    echo "Brewfile already exists at $Brewfile_path"
 fi
 
 # --personal 플래그 체크
@@ -50,11 +54,13 @@ personal=0
 for arg in "$@"; do
     if [ "$arg" == "--personal" ]; then
         personal=1
+        echo "--personal flag detected."
         break
     fi
 done
 
 # Brewfile 내용 작성
+echo "Writing base apps to Brewfile"
 cat <<EOL > "$Brewfile_path"
 # Mac App Store command-line interface
 brew "git"
@@ -62,8 +68,9 @@ brew "mas"
 brew "yarn"
 EOL
 
-# 개인 사용
+# 개인 사용 애플리케이션 추가
 if [ "$personal" -eq 1 ]; then
+    echo "Adding personal apps to Brewfile"
     cat <<EOL >> "$Brewfile_path"
 brew "ffmpeg"
 brew "yt-dlp"
@@ -72,6 +79,7 @@ cask "telegram"
 EOL
 fi
 
+echo "Writing additional apps to Brewfile"
 cat <<EOL >> "$Brewfile_path"
 # 도구
 cask "aldente"
@@ -98,7 +106,7 @@ cask "jetbrains-toolbox"
 mas "카카오톡", id: 869223134
 EOL
 
-echo "Brewfile created and populated."
+echo "Brewfile created and populated with apps."
 ######################################################################
 
 # Brewfile 설치
