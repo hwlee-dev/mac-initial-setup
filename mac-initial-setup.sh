@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# 벤치마크: 스크립트를 루트 권한으로 실행할 경우를 방지
+# 스크립트를 루트 권한으로 실행할 경우를 방지
 if [ "$EUID" -eq 0 ]; then
   echo "Please do not run this script with sudo."
   exit 1
 fi
 
-# Dock 구분 추가 (sudo 필요)
+# Dock 구분 추가
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
