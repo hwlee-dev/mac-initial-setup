@@ -13,6 +13,8 @@
 - node 최신 버전 설치
 
 ```
+chmod +x mac-initial-setup.sh
+
 # 개인용
 ./mac-initial-setup --personal
 
