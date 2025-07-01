@@ -75,7 +75,6 @@ cat <<EOL >> "$Brewfile_path"
 # 도구
 cask "aldente"
 cask "alfred"
-cask "bartender"
 cask "karabiner-elements"
 cask "macupdater"
 cask "rectangle"
