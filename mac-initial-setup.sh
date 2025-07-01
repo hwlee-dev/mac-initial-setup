@@ -26,13 +26,6 @@ if ! grep -Fxq "export PATH=/opt/homebrew/bin:\$PATH" ~/.zshrc; then
     echo "export PATH=/opt/homebrew/bin:\$PATH" >> ~/.zshrc
 fi
 
-# nvm 설정 추가
-if ! grep -Fxq 'export NVM_DIR="$HOME/.nvm"' ~/.zshrc; then
-    echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
-    echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.zshrc
-    echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ~/.zshrc
-fi
-
 source ~/.zshrc
 ######################################################################
 
@@ -112,6 +105,15 @@ sed -i '' 's/plugins=(/plugins=(zsh-autosuggestions /' ~/.zshrc
 
 # nvm 설치
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# nvm 설정 추가
+if ! grep -Fxq 'export NVM_DIR="$HOME/.nvm"' ~/.zshrc; then
+    echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
+    echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.zshrc
+    echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ~/.zshrc
+fi
+
+source ~/.zshrc
 
 # node 최신 버전 설치
 nvm install node
