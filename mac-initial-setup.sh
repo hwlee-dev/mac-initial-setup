@@ -7,10 +7,10 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 # Dock 구분 추가 (sudo 필요)
-sudo defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
-sudo defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
-sudo defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
-sudo killall Dock
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
+killall Dock
 
 # Homebrew 설치 (사용자 권한으로 실행)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
