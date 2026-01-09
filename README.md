@@ -22,3 +22,14 @@ chmod +x mac-initial-setup.sh
 # 업무용
 ./mac-initial-setup
 ```
+
+### Mac Dock 구분선 추가
+```shell
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
+```
+
+### YT-DLP 명령어
+```shell
+yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 <URL>
+```

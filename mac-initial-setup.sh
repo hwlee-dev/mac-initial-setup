@@ -65,7 +65,7 @@ EOL
 fi
 
 cat <<EOL >> "$Brewfile_path"
-# 도구
+# 편의
 cask "aldente"
 cask "alfred"
 cask "karabiner-elements"
