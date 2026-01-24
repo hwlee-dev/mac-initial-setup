@@ -61,7 +61,9 @@ brew "ffmpeg"
 brew "yt-dlp"
 cask "discord"
 cask "telegram"
+cask "docker-desktop"
 EOL
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
 fi
 
 cat <<EOL >> "$Brewfile_path"
